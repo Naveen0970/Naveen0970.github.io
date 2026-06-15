@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  AEM DEVELOPER PORTFOLIO  — main page (v2, interactive)
+  Edit anything in [SQUARE BRACKETS]. Deploy steps are in README.md
+  ============================================================
+-->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Naveen Akkanapally — Sr. AEM Developer</title>
+<meta name="description" content="Naveen Akkanapally is a Senior AEM developer with 10+ years in enterprise web development and 6+ years on Adobe Experience Manager — component architecture, SPA Editor, headless delivery, and performance." />
+<meta property="og:title" content="Naveen Akkanapally — Sr. AEM Developer" />
+<meta property="og:description" content="Component-driven experiences on Adobe Experience Manager." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237C6CFF'/%3E%3Ctext x='16' y='22' font-size='16' font-family='monospace' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><span class="dot"></span>Naveen Akkanapally</div>
+    <div class="nav-mid">
+      <a href="#playground">build</a>
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#experience">experience</a>
+      <a href="#work">work</a>
+      <a href="#contact">contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="kbd-hint" id="cmdkTrigger" aria-label="Open command palette">&#8984; K</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">&#9680;</button>
+      <a class="btn btn-primary" href="[link-to-resume.pdf]">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="role">Senior AEM Developer &middot; New York, USA</div>
+      <h1>I build <span class="grad-text">component-driven</span> experiences on AEM.</h1>
+      <p class="lead">I build custom AEM components, SPA Editor and headless delivery, and tuned Dispatcher/CDN performance — backed by Java, OSGi, and Sling services — for enterprise sites in finance, insurance, and healthcare.</p>
+      <div class="rotator-line">currently going deep on <span class="rotator" id="rotator"></span></div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Get in touch &rarr;</a>
+        <a class="btn btn-ghost" href="#playground">Try the page builder</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="n">10+</div><div class="l">Years in development</div></div>
+        <div class="stat"><div class="n">6+</div><div class="l">Years on AEM</div></div>
+        <div class="stat"><div class="n">7</div><div class="l">Enterprise clients</div></div>
+      </div>
+    </div>
+    <div class="tree-card reveal">
+      <div class="barbar"><i></i><i></i><i></i></div>
+      <div class="tree">
+        <svg viewBox="0 0 320 250" xmlns="http://www.w3.org/2000/svg" id="treeSvg">
+          <g stroke="var(--border)" stroke-width="1.5" fill="none" class="tlines">
+            <path d="M30 30 V70 H70" /><path d="M30 70 V110 H70" />
+            <path d="M70 110 V150 H110" /><path d="M70 110 V190 H110" /><path d="M70 110 V230 H110" />
+          </g>
+          <g class="tnodes">
+            <g class="tnode"><rect x="16" y="22" width="14" height="14" rx="3" fill="var(--accent)"/><text x="40" y="33" class="node-label root">page</text></g>
+            <g class="tnode"><rect x="56" y="62" width="14" height="14" rx="3" fill="var(--accent-2)"/><text x="80" y="73" class="node-label">jcr:content</text></g>
+            <g class="tnode"><rect x="96" y="102" width="14" height="14" rx="3" fill="var(--muted)"/><text x="120" y="113" class="node-label">root (responsivegrid)</text></g>
+            <g class="tnode"><rect x="96" y="142" width="14" height="14" rx="3" fill="var(--accent)"/><text x="120" y="153" class="node-label">hero</text></g>
+            <g class="tnode"><rect x="96" y="182" width="14" height="14" rx="3" fill="var(--accent)"/><text x="120" y="193" class="node-label">teaser</text></g>
+            <g class="tnode"><rect x="96" y="222" width="14" height="14" rx="3" fill="var(--accent)"/><text x="120" y="233" class="node-label">contentfragment</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PAGE BUILDER (centerpiece) ============ -->
+<section id="playground">
+  <div class="wrap">
+    <div class="eyebrow reveal">page-builder <span class="dim">/apps/myapp/author</span></div>
+    <h2 class="reveal">Author a page, the way AEM works</h2>
+    <p class="body reveal">Drag components from the palette onto the canvas — or click to add. <strong>Click any text to edit it inline, and upload your own images</strong> from your computer. Reorder, remove, then switch to <strong>Structure</strong> to see the JCR content model your page produces. This is real AEM authoring, rebuilt in vanilla JavaScript.</p>
+
+    <div class="builder" id="builder">
+      <div class="builder-grid reveal">
+        <!-- palette -->
+        <div class="palette panel">
+          <div class="panel-head"><span class="d"></span>Components</div>
+          <div class="panel-body">
+            <div class="palette-item" draggable="true" data-type="hero"><span class="ico">&#9608;</span><span class="nm">Hero</span><span class="add">+ add</span></div>
+            <div class="palette-item" draggable="true" data-type="teaser"><span class="ico">&#9707;</span><span class="nm">Teaser</span><span class="add">+ add</span></div>
+            <div class="palette-item" draggable="true" data-type="text"><span class="ico">&#9776;</span><span class="nm">Text</span><span class="add">+ add</span></div>
+            <div class="palette-item" draggable="true" data-type="image"><span class="ico">&#9635;</span><span class="nm">Image</span><span class="add">+ add</span></div>
+            <div class="palette-item" draggable="true" data-type="grid"><span class="ico">&#9638;</span><span class="nm">Card Grid</span><span class="add">+ add</span></div>
+            <div class="palette-item" draggable="true" data-type="cta"><span class="ico">&#9644;</span><span class="nm">CTA Banner</span><span class="add">+ add</span></div>
+            <div class="palette-item" draggable="true" data-type="carousel"><span class="ico">&#9636;</span><span class="nm">Carousel</span><span class="add">+ add</span></div>
+            <div class="palette-item" draggable="true" data-type="accordion"><span class="ico">&#8801;</span><span class="nm">Accordion</span><span class="add">+ add</span></div>
+            <div class="palette-item" draggable="true" data-type="tabs"><span class="ico">&#9639;</span><span class="nm">Tabs</span><span class="add">+ add</span></div>
+            <div class="palette-item" draggable="true" data-type="button"><span class="ico">&#9647;</span><span class="nm">Button</span><span class="add">+ add</span></div>
+            <div class="palette-item" draggable="true" data-type="quote"><span class="ico">&#10077;</span><span class="nm">Quote</span><span class="add">+ add</span></div>
+            <div class="palette-item" draggable="true" data-type="video"><span class="ico">&#9654;</span><span class="nm">Video</span><span class="add">+ add</span></div>
+          </div>
+        </div>
+        <!-- canvas -->
+        <div class="panel canvas-wrap">
+          <div class="panel-head"><span class="d"></span>Page canvas
+            <div class="builder-tabs">
+              <button id="tabPreview" class="active">Preview</button>
+              <button id="tabStructure">Structure</button>
+            </div>
+          </div>
+          <div class="canvas" id="canvas"></div>
+          <div class="structure-view" id="structureView"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow reveal">profile <span class="dim">/components/profile</span></div>
+    <h2 class="reveal">About</h2>
+    <p class="body reveal">I'm a Senior AEM developer with over 10 years building enterprise web applications, including 6+ years focused on Adobe Experience Manager. I've delivered custom component libraries, SPA Editor integrations with React, headless content APIs, and Dispatcher/CDN performance work across AEM 6.x and AEM as a Cloud Service for clients in finance, insurance, and healthcare. I work across the full stack — Sling Models, OSGi services, schedulers, and workflows on the backend, through responsive React and front-end UI. Currently open to senior AEM and full-stack roles.</p>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow reveal">skills-list <span class="dim">/components/skills-list</span></div>
+    <h2 class="reveal">What I work with</h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal"><div class="label">AEM Core</div><div class="chips"><span class="chip">Sling Models</span><span class="chip">OSGi</span><span class="chip">HTL / Sightly</span><span class="chip">Editable Templates</span><span class="chip">Sling Servlets</span><span class="chip">Content Fragments</span><span class="chip">Experience Fragments</span><span class="chip">SPA Editor</span><span class="chip">Core Components</span><span class="chip">Workflows</span><span class="chip">DAM / Dynamic Media</span><span class="chip">MSM</span></div></div>
+      <div class="skill-card reveal"><div class="label">Backend</div><div class="chips"><span class="chip">Java 8</span><span class="chip">J2EE</span><span class="chip">Spring / Spring Boot</span><span class="chip">JCR (Oak)</span><span class="chip">Apache Sling</span><span class="chip">REST / SOAP</span><span class="chip">GraphQL</span><span class="chip">Hibernate</span><span class="chip">Maven</span><span class="chip">JUnit / Mockito</span></div></div>
+      <div class="skill-card reveal"><div class="label">Frontend</div><div class="chips"><span class="chip">React</span><span class="chip">Angular</span><span class="chip">JavaScript</span><span class="chip">jQuery</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Bootstrap</span><span class="chip">JSON / AJAX</span></div></div>
+      <div class="skill-card reveal"><div class="label">Ops &amp; Delivery</div><div class="chips"><span class="chip">Dispatcher</span><span class="chip">AEMaaCS</span><span class="chip">Cloud Manager</span><span class="chip">Jenkins</span><span class="chip">Azure DevOps</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">AWS</span><span class="chip">Git / Bitbucket</span></div></div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow reveal">experience <span class="dim">/components/timeline</span></div>
+    <h2 class="reveal">Experience</h2>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="when">Nov 2025 — Present</div><div class="what">Sr. AEM Full Stack Developer</div><div class="where">Capgemini &middot; New York</div><p>Building reusable AEM components, editable templates, and React SPA Editor integrations on AEM 6.5 and AEMaaCS; exposing content via GraphQL/JSON and tuning Dispatcher and CDN caching.</p></div>
+      <div class="tl-item reveal"><div class="when">Oct 2024 — Nov 2025</div><div class="what">Sr. AEM Full Stack Developer</div><div class="where">Prudential &middot; Newark, NJ</div><p>Contributed to a legacy-to-AEMaaCS migration — components, Sling Models, Content &amp; Experience Fragments, SAML auth, and Cloud Manager CI/CD — improving governance and performance.</p></div>
+      <div class="tl-item reveal"><div class="when">Mar 2023 — Oct 2024</div><div class="what">Sr. AEM Developer</div><div class="where">Macquarie Group &middot; New York, NY</div><p>Set up AEM 6.5 and Cloud environments, built custom components and OSGi services, integrated Adobe Analytics/Target, and optimized Dispatcher and CDN delivery.</p></div>
+      <div class="tl-item reveal"><div class="when">Apr 2021 — Dec 2022</div><div class="what">Sr. AEM Developer</div><div class="where">Elevance Health &middot; Indianapolis, IN</div><p>Led the AEM 6.4 → 6.5 upgrade, built React SPA Editor components and Content Fragments for headless delivery, and customized DAM workflows and metadata schemas.</p></div>
+      <div class="tl-item reveal"><div class="when">Aug 2019 — Apr 2021</div><div class="what">Sr. AEM Developer</div><div class="where">Realogy &middot; Jersey City, NJ</div><p>Built PLP/PDP pages and reusable components on AEM 6.3/6.4, implemented Azure SSO, and tuned Dynamic Media, CDN, and Oak query performance.</p></div>
+      <div class="tl-item reveal"><div class="when">2014 — 2019</div><div class="what">AEM &amp; Java Developer</div><div class="where">Regions Bank &middot; Idexcel Technologies</div><p>AEM 6.2/6.3 development and platform upgrades at Regions Bank; earlier Java/Spring Boot and microservices work as a Java Developer at Idexcel.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK (filterable) ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="eyebrow reveal">project-card <span class="dim">/components/work-grid</span></div>
+    <h2 class="reveal">Selected work</h2>
+    <div class="filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="headless">Headless</button>
+      <button class="filter-btn" data-filter="backend">Backend</button>
+      <button class="filter-btn" data-filter="frontend">Frontend</button>
+      <button class="filter-btn" data-filter="performance">Performance</button>
+    </div>
+    <div class="work-grid">
+      <a class="work-card reveal" href="case-study.html" data-tags="headless backend frontend performance">
+        <div class="meta">01 &middot; Insurance <span class="feat">Case study</span></div>
+        <h3>Legacy &rarr; AEM as a Cloud Service migration</h3>
+        <p>Migrated a large insurance platform to AEMaaCS — components, Sling Models, fragments, SAML auth, and Cloud Manager CI/CD.</p>
+        <div class="stack"><span>AEMaaCS</span><span>&middot;</span><span>Sling</span><span>&middot;</span><span>SAML</span><span>&middot;</span><span>Dispatcher</span></div>
+        <div class="arrow">Read the full case study &rarr;</div>
+      </a>
+      <div class="work-card reveal" data-tags="backend frontend headless">
+        <div class="meta">02 &middot; Financial Services</div>
+        <h3>Multi-site component library &amp; SPA Editor</h3>
+        <p>Reusable AEM components mapped to React via SPA Editor, with GraphQL/JSON content delivery across multiple sites.</p>
+        <div class="stack"><span>AEM 6.5</span><span>&middot;</span><span>React</span><span>&middot;</span><span>GraphQL</span></div>
+        <div class="arrow">Capgemini</div>
+      </div>
+      <div class="work-card reveal" data-tags="frontend performance backend">
+        <div class="meta">03 &middot; Financial Services</div>
+        <h3>AEM environments + Adobe MarTech integration</h3>
+        <p>Stood up AEM 6.5/Cloud environments and integrated Adobe Analytics and Target, with Dispatcher and CDN tuning.</p>
+        <div class="stack"><span>AEM 6.5</span><span>&middot;</span><span>Analytics</span><span>&middot;</span><span>Target</span></div>
+        <div class="arrow">Macquarie Group</div>
+      </div>
+      <div class="work-card reveal" data-tags="headless frontend">
+        <div class="meta">04 &middot; Healthcare</div>
+        <h3>AEM 6.4 &rarr; 6.5 upgrade &amp; React SPA</h3>
+        <p>Led the platform upgrade and built React SPA Editor components and Content Fragments for headless, multi-channel delivery.</p>
+        <div class="stack"><span>Upgrade</span><span>&middot;</span><span>React</span><span>&middot;</span><span>Content Fragments</span></div>
+        <div class="arrow">Elevance Health</div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- ============ GITHUB ACTIVITY ============ -->
+<section id="github">
+  <div class="wrap">
+    <div class="eyebrow reveal">activity <span class="dim">/api/github</span></div>
+    <h2 class="reveal">Live from GitHub</h2>
+    <p class="body reveal">Pulled straight from my GitHub in real time — proof I'm actively shipping code.</p>
+    <!-- Put your GitHub username in data-user below to activate this -->
+    <div class="gh-card reveal" id="ghCard" data-user="Naveen0970">
+      <div class="gh-top">
+        <div class="gh-avatar" id="ghAvatar">A</div>
+        <div>
+          <div style="font-family:var(--display);font-weight:600;font-size:18px;">@Naveen0970</div>
+          <div style="color:var(--muted);font-size:13.5px;">Recently updated repositories</div>
+        </div>
+        <div class="gh-stats">
+          <div class="s"><div class="n" id="ghRepos">—</div><div class="l">Repos</div></div>
+          <div class="s"><div class="n" id="ghFollowers">—</div><div class="l">Followers</div></div>
+        </div>
+      </div>
+      <div class="gh-repos" id="ghRepoList"></div>
+      <div class="gh-note" id="ghNote"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <div class="eyebrow" style="justify-content:center;">contact <span class="dim">/components/contact</span></div>
+      <h2>Let's build something solid.</h2>
+      <p class="body" style="margin:0 auto;">Open to senior AEM and full-stack roles. Send a message and I'll reply quickly.</p>
+      <!-- Create a free form at formspree.io and paste its URL in action="" below -->
+      <form class="form" id="contactForm" action="[https://formspree.io/f/your-form-id]" method="POST">
+        <div class="form-row">
+          <div><label>Name</label><input type="text" name="name" required /></div>
+          <div><label>Email</label><input type="email" name="email" required /></div>
+        </div>
+        <label>Message</label>
+        <textarea name="message" required placeholder="Tell me about the role or project…"></textarea>
+        <button class="btn btn-primary" type="submit">Send message</button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+      <div class="links-row">
+        <a href="mailto:a.naveenkrishna06@gmail.com">a.naveenkrishna06@gmail.com</a>
+        <a href="tel:+14757669180">475-766-9180</a>
+        <a href="[https://linkedin.com/in/yourprofile]">LinkedIn</a>
+        <a href="https://github.com/Naveen0970" target="_blank" rel="noopener">GitHub</a>
+        <a href="[link-to-resume.pdf]">Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>&copy; <span id="year"></span> Naveen Akkanapally</span>
+  <span>Built &amp; hosted free on GitHub Pages &middot; press &#8984;K</span>
+</footer>
+
+<!-- command palette -->
+<div class="cmdk-overlay" id="cmdk">
+  <div class="cmdk">
+    <input class="cmdk-input" id="cmdkInput" placeholder="Type a command or jump to a section…" />
+    <div class="cmdk-list" id="cmdkList"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

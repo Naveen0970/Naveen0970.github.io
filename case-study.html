@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  CASE STUDY PAGE — your flagship project write-up
+  This is the single most important page for recruiters.
+  Replace [BRACKETS] with your real project once you have one.
+  ============================================================
+-->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Legacy → AEMaaCS Migration — Case Study · Naveen Akkanapally</title>
+<meta name="description" content="How I helped migrate a legacy insurance platform to AEM as a Cloud Service — components, fragments, SAML auth, and CI/CD." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237C6CFF'/%3E%3Ctext x='16' y='22' font-size='16' font-family='monospace' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><span class="dot"></span>Naveen Akkanapally</div>
+    <div class="nav-mid">
+      <a href="index.html#about">about</a>
+      <a href="index.html#skills">skills</a>
+      <a href="index.html#work">work</a>
+      <a href="index.html#contact">contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">◐</button>
+      <a class="btn btn-primary" href="[link-to-resume.pdf]">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ CASE STUDY HERO ============ -->
+<header class="cs-hero">
+  <div class="wrap">
+    <a class="back" href="index.html#work">← Back to work</a>
+    <div class="eyebrow">case-study <span class="dim">/content/aemaacs-migration</span></div>
+    <h1 style="max-width: 18ch;">Migrating a legacy insurance platform to AEM as a Cloud Service</h1>
+    <p class="lead" style="margin-top:18px;">A migration from legacy CMS platforms to AEM as a Cloud Service — modernizing the component set, content model, authentication, and delivery pipeline to improve governance, modularity, and performance.</p>
+    <div class="cs-meta">
+      <div class="m"><div class="k">Role</div><div class="v">Sr. AEM Full Stack Developer</div></div>
+      <div class="m"><div class="k">Timeline</div><div class="v">Oct 2024 – Nov 2025</div></div>
+      <div class="m"><div class="k">Platform</div><div class="v">AEM as a Cloud Service</div></div>
+      <div class="m"><div class="k">Client</div><div class="v">Prudential (Insurance)</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CONTEXT / PROBLEM ============ -->
+<section>
+  <div class="wrap prose">
+    <div class="eyebrow reveal">01 <span class="dim">context</span></div>
+    <h2 class="reveal">The problem</h2>
+    <p class="reveal">The platform ran on legacy CMS technology that made content governance and reuse difficult. Authoring was rigid, components were hard to share across sections, and the delivery stack lacked the modular, cloud-native pipeline the team needed to move quickly and safely.</p>
+    <p class="reveal">The goal was to migrate onto AEM as a Cloud Service, rebuild content as reusable components and fragments, align authentication with enterprise SAML standards, and stand up an automated Cloud Manager pipeline — all without disrupting live content operations.</p>
+    <div class="callout reveal">Modernize content, security, and delivery on AEMaaCS — while keeping a regulated, content-heavy insurance site stable throughout.</div>
+  </div>
+</section>
+
+<!-- ============ ARCHITECTURE ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow reveal">02 <span class="dim">architecture</span></div>
+    <h2 class="reveal">How it fits together</h2>
+    <p class="body reveal">Authors work in AEM, content publishes to the cloud publish tier, and the Dispatcher and CDN cache and secure delivery to end users. Structured content is exposed as Content/Experience Fragments over GraphQL and JSON for headless and SPA channels.</p>
+    <div class="arch reveal">
+      <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0 0 L8 3 L0 6 Z" fill="var(--muted)"/>
+          </marker>
+        </defs>
+        <!-- boxes -->
+        <g>
+          <rect x="20"  y="70" width="130" height="60" rx="10" fill="var(--bg-3)" stroke="var(--accent)"/>
+          <text x="85"  y="96"  text-anchor="middle" class="lbl">Author</text>
+          <text x="85"  y="114" text-anchor="middle" class="sub">authoring + dialogs</text>
+
+          <rect x="210" y="70" width="130" height="60" rx="10" fill="var(--bg-3)" stroke="var(--accent-2)"/>
+          <text x="275" y="96"  text-anchor="middle" class="lbl">Publish</text>
+          <text x="275" y="114" text-anchor="middle" class="sub">rendered pages</text>
+
+          <rect x="400" y="70" width="130" height="60" rx="10" fill="var(--bg-3)" stroke="var(--accent-2)"/>
+          <text x="465" y="96"  text-anchor="middle" class="lbl">Dispatcher</text>
+          <text x="465" y="114" text-anchor="middle" class="sub">cache + security</text>
+
+          <rect x="590" y="70" width="130" height="60" rx="10" fill="var(--bg-3)" stroke="var(--accent)"/>
+          <text x="655" y="96"  text-anchor="middle" class="lbl">CDN</text>
+          <text x="655" y="114" text-anchor="middle" class="sub">edge delivery</text>
+
+          <rect x="780" y="70" width="100" height="60" rx="10" fill="var(--bg-3)" stroke="var(--accent)"/>
+          <text x="830" y="100" text-anchor="middle" class="lbl">Visitor</text>
+        </g>
+        <!-- arrows -->
+        <g stroke="var(--muted)" stroke-width="1.6" marker-end="url(#arrow)">
+          <line x1="150" y1="100" x2="205" y2="100"/>
+          <line x1="340" y1="100" x2="395" y2="100"/>
+          <line x1="530" y1="100" x2="585" y2="100"/>
+          <line x1="720" y1="100" x2="775" y2="100"/>
+        </g>
+      </svg>
+    </div>
+    <p class="body reveal" style="margin-top:16px;">SAML / Azure AD handled authentication, while Content and Experience Fragments fed both the AEM sites and downstream SPA and mobile channels.</p>
+  </div>
+</section>
+
+<!-- ============ KEY DECISIONS ============ -->
+<section>
+  <div class="wrap prose">
+    <div class="eyebrow reveal">03 <span class="dim">decisions</span></div>
+    <h2 class="reveal">Key decisions</h2>
+
+    <h3 class="reveal" style="margin-top:18px;">A shared component set on editable templates</h3>
+    <p class="reveal">Rebuilt authoring around editable templates, custom components, and Sling Models in HTL — replacing forked, hard-to-maintain markup with a reusable, policy-driven set authors could configure without developer involvement.</p>
+
+    <h3 class="reveal" style="margin-top:24px;">Content &amp; Experience Fragments for headless reuse</h3>
+    <p class="reveal">Modeled structured content as Content and Experience Fragments and exposed it via GraphQL and JSON, so the same content could serve AEM pages, SPA modules, and mobile channels from a single source of truth.</p>
+    <pre class="code reveal"><span class="cm">// Sling Model exposing a Content Fragment to HTL (sanitized)</span>
+<span class="kw">@Model</span>(adaptables = Resource.class)
+<span class="kw">public class</span> TeaserModel {
+
+    <span class="kw">@ValueMapValue</span>
+    <span class="kw">private</span> String fragmentPath;
+
+    <span class="kw">public</span> String <span class="kw">getTitle</span>() {
+        <span class="kw">return</span> resolve(fragmentPath, <span class="st">"title"</span>);
+    }
+}</pre>
+
+    <h3 class="reveal" style="margin-top:24px;">SAML auth and a Cloud Manager CI/CD pipeline</h3>
+    <p class="reveal">Implemented SAML-based authentication with role-based access control to meet enterprise security and compliance needs, and automated builds, tests, and deployments through Cloud Manager, Jenkins, and Maven across environments.</p>
+  </div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow reveal">04 <span class="dim">results</span></div>
+    <h2 class="reveal">The results</h2>
+    <div class="metrics">
+      <div class="metric reveal"><div class="big">CI/CD</div><div class="cap">Automated via Cloud Manager</div></div>
+      <div class="metric reveal"><div class="big">Headless</div><div class="cap">GraphQL / JSON delivery</div></div>
+      <div class="metric reveal"><div class="big">SAML</div><div class="cap">Enterprise SSO &amp; RBAC</div></div>
+    </div>
+    <p class="body reveal" style="margin-top:22px;">Tip from your portfolio builder: if you have any hard numbers (page-load improvement, reduced release time, fewer developer tickets, author time saved), add them here — concrete metrics are what make recruiters take notice.</p>
+  </div>
+</section>
+
+<!-- ============ TAKEAWAYS ============ -->
+<section>
+  <div class="wrap prose">
+    <div class="eyebrow reveal">05 <span class="dim">takeaways</span></div>
+    <h2 class="reveal">What I'd carry forward</h2>
+    <p class="reveal">Migrations succeed on the boring details — a disciplined component model, a clean content structure, and an automated pipeline matter more than any single feature. Treating fragments as the source of truth early made headless and SPA delivery far simpler later, and made the platform easier to govern and extend.</p>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section>
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <h2>Want the full story?</h2>
+      <p class="body" style="margin:0 auto;">Happy to walk through the architecture and code decisions in detail.</p>
+      <div class="links-row">
+        <a href="mailto:a.naveenkrishna06@gmail.com">a.naveenkrishna06@gmail.com</a>
+        <a href="index.html#work">More work</a>
+        <a href="[link-to-resume.pdf]">Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© <span id="year"></span> Naveen Akkanapally</span>
+  <span>Built &amp; hosted free on GitHub Pages</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
